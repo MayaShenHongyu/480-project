@@ -36,9 +36,9 @@ def map_to_Y(raw_X, dataset, percent = 0.05):
 	return Y
 
 
-def process_query_keywords():
-	data = pd.read_csv("user-ct-test-collection-01.txt", sep="\t")
-	queries = data.Query.dropna().values.tolist()
+def process_query_keywords(queries):
+	# data = pd.read_csv("user-ct-test-collection-01.txt", sep="\t")
+	# queries = data.Query.dropna().values.tolist()
 	query_keywords = []
 	for query in queries:
 		query_keywords.extend(query.split(' '))
@@ -57,8 +57,17 @@ def load_keyword_dictionary(keywords):
 
 
 
-keywords = process_query_keywords()[:100000]
-train_keywords, test_keywords = split_data_to_train_and_test(keywords)
+# keywords = process_query_keywords()[:100000]
+# train_keywords, test_keywords = split_data_to_train_and_test(keywords)
+
+with open("training.txt", "rb") as f1:
+    train_queries = pickle.load(f1)
+
+with open("validation.txt", "rb") as f2:
+	test_queries = pickle.load(f2)
+
+train_keywords = process_query_keywords(train_queries)
+test_keywords = process_query_keywords(test_queries)
 
 X_train = map_to_X(train_keywords)
 y_train = map_to_Y(train_keywords, train_keywords)
@@ -72,7 +81,7 @@ y_test = map_to_Y(test_keywords, test_keywords)
 # create the model
 embedding_vecor_length = 32
 model = Sequential()
-model.add(Embedding(128, embedding_vecor_length, input_length=30))
+model.add(Embedding(300, embedding_vecor_length, input_length=30))
 model.add(LSTM(100))
 model.add(Dense(1, activation='sigmoid'))
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
