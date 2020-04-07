@@ -5,4 +5,6 @@ Activate virtual environment:
 virtualenv --system-site-packages -p python2.7 ./venv
 ```
 Deactivate:
-$deactivate  # don't exit until you're done using TensorFlow$
+```bash
+deactivate  # don't exit until you're done using TensorFlow
+```
