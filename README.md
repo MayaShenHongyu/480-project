@@ -2,7 +2,7 @@
 
 Activate virtual environment:
 ```bash
-virtualenv --system-site-packages -p python2.7 ./venv
+source ./venv/bin/activate  # sh, bash, ksh, or zsh
 ```
 Deactivate:
 ```bash
