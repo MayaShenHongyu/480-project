@@ -129,4 +129,6 @@ dmypy.json
 .pyre/
 
 
-test.txt
+*.txt
+*.DS_Store
+get-pip.py
