@@ -67,10 +67,10 @@ def load_keyword_dictionary(keywords):
 
 
 with open("training.txt", "rb") as f1:
-    train_keywords = pickle.load(f1, encoding='bytes')[:10000]
+    train_keywords = pickle.load(f1, encoding='bytes')
 
 with open("validation.txt", "rb") as f2:
-	test_keywords = pickle.load(f2, encoding='bytes')[:1000]
+	test_keywords = pickle.load(f2, encoding='bytes')
 
 
 with open("test.txt", "rb") as f3:
