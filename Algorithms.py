@@ -3,8 +3,6 @@ from sklearn.utils import murmurhash3_32
 from heapq import heappush, heapreplace
 import random
 
-def MSE(estimate, actual):
-	return np.sqrt((estimate - actual) ** 2) / actual
 
 def hash_func(seed, R):
 	s = random.randint(0, 1000)
@@ -26,7 +24,7 @@ class CountMinSketch:
 	def insert(self, x):
 		for i in range(4):
 			self.hash_arrays[i][self.hash_functions[i](x)] += 1
-		self._heap_insert(x)
+		# self._heap_insert(x)
 	
 	def _heap_insert(self, x):
 		new_count = self.query(x)
@@ -59,7 +57,7 @@ class CountSketch:
 	def insert(self, x):
 		for i in range(4):
 			self.hash_arrays[i][self.hash_functions[i](x)] += self.g_functions[i](x)
-		self._heap_insert(x)
+		# self._heap_insert(x)
 
 	def _heap_insert(self, x):
 		new_count = self.query(x)

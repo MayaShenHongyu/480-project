@@ -30,15 +30,17 @@ valid_set = []
 test_set = []
 train_limit = datetime(2006, 3, 5, 23, 59, 59)
 valid_limit = datetime(2006, 3, 6, 23, 59, 59)
-test_limit = datetime(2006, 3, 11, 23, 59, 59)
+test_limit = datetime(2006, 3, 7, 23, 59, 59)
 for i in range(size):
     item = data.iloc[i]
     date = datetime.strptime(item.QueryTime, "%Y-%m-%d %H:%M:%S")
-    if (date <= train_limit):
-        train_set.append(item)
-    elif (date <= valid_limit):
-        valid_set.append(item)
-    elif date < test_limit:
+    # if (date <= train_limit):
+    #     train_set.append(item)
+    # elif (date <= valid_limit):
+    #     valid_set.append(item)
+    # elif date < test_limit:
+    #     test_set.append(item)
+    if date > valid_limit and date <= test_limit:
         test_set.append(item)
 
 
@@ -81,12 +83,12 @@ for item in test_set:
 # # In[5]:
 
 
-with open("training1.txt", "wb") as f1:
-    pickle.dump(training, f1)
+# with open("training1.txt", "wb") as f1:
+#     pickle.dump(training, f1)
     
-with open("validation1.txt", "wb") as f2:
-    pickle.dump(validation, f2)
+# with open("validation1.txt", "wb") as f2:
+#     pickle.dump(validation, f2)
 
-with open("test.txt", "wb") as f3:
+with open("test-1d.txt", "wb") as f3:
     pickle.dump(test, f3)
 

@@ -17,7 +17,7 @@ def load_keyword_dictionary(keywords):
 	return keyword_dict
 
 
-with open("test.txt", "rb") as f2:
+with open("test-1d.txt", "rb") as f2:
 	keywords = pickle.load(f2)
 
 
@@ -41,5 +41,5 @@ for setname in queries:
 
 for setname in dictionaries:
 	print(dictionaries[setname])
-with open("freq-infreq-rand-counts.txt", "wb") as f1:
+with open("freq-infreq-rand-counts-1d.txt", "wb") as f1:
     pickle.dump(dictionaries, f1)
