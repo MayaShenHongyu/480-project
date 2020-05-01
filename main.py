@@ -17,6 +17,7 @@ with open("test.txt", "rb") as f1:
 with open("freq-infreq-rand-counts.txt", "rb") as f2:
 	test_queries_sets = pickle.load(f2)
 
+
 with open("model-repetitive.obj", "rb") as f3:
 	model = pickle.load(f3)
 
