@@ -16,7 +16,7 @@ from util import map_to_X, MSE, load_keyword_dictionary, error, get_size, byte_t
 with open("test.txt", "rb") as f1:
 	queries = pickle.load(f1)
 
-model = load_model("model-repetitive-5.h5")
+model = load_model("model.h5")
 
 ## Input: model - trained model, queries - list of all test queries, sketches - list of sketch objects
 ## Return: heavy_hitter_buckets - dictionary of heavy hitter counts, sketches - sketch objects with test queries inserted

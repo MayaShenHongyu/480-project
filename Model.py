@@ -53,7 +53,7 @@ model.fit(X_train, y_train, validation_data=(X_validate, y_validate), epochs=3, 
 scores = model.evaluate(X_validate, y_validate, verbose=0)
 print("Accuracy: %.2f%%" % (scores[1]*100))
 # Save the model
-model.save("model-repetitive-5.h5")
+model.save("model.h5")
 
 
 
