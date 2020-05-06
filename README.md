@@ -1,10 +1,10 @@
 # 480 Project: Implementation and analysis of learning-based frequency estimation algorithms
 
-1. Prepare the datasets.
+1. Prepare the datasets. This will generate "test.txt", "training.txt", and "validation.txt" files.
 ```bash
 python3 Dataset.py
 ```
-2. Train the model.
+2. Train the model. This will generate a "model.h5" file.
 ```bash
 python3 Model.py
 ```
