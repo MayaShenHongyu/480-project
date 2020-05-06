@@ -17,4 +17,4 @@ python3 HashExperiments.py
 ```bash
 python3 NonHashExperiment.py threshold
 ```
-threshold must be a float number within [0, 1]
+threshold must be a float number within [0, 1].
