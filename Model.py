@@ -60,7 +60,7 @@ model.save("model.h5")
 ### Plot ROC graph
 
 # Load model
-# model = load_model("model-repetitive-5.h5")
+# model = load_model("model.h5")
 
 # Prepare y values
 y_test_predictions = model.predict(X_test)
