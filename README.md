@@ -15,5 +15,6 @@ python3 HashExperiments.py
 ```
 4. Run non-hashing algorithm experiment (Space-Saving).
 ```bash
-python3 NonHashExperiment.py
+python3 NonHashExperiment.py threshold
 ```
+threshold must be a float number within [0, 1]
