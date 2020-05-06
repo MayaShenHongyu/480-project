@@ -1,10 +1,19 @@
 # 480 Project: Implementation and analysis of learning-based frequency estimation algorithms
 
-Activate virtual environment:
+1. Prepare the datasets.
 ```bash
-source ./venv/bin/activate  # sh, bash, ksh, or zsh
+python3 Dataset.py
 ```
-Deactivate:
+2. Train the model.
 ```bash
-deactivate  # don't exit until you're done using TensorFlow
+python3 Model.py
+```
+3. Run hashing-based alrgoithm experiments (Count Sketch, Count-Min, Single hash function). Change the "SingleHash" at line 71, 72 to "CountSketch" or "CountMinSketch".
+
+```bash
+python3 HashExperiments.py
+```
+4. Run non-hashing algorithm experiment (Space-Saving).
+```bash
+python3 NonHashExperiment.py
 ```
