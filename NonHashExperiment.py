@@ -61,7 +61,7 @@ def main():
 	if len(args) == 1:
 		print("No Frequency Threshold Specified\n")
 		return
-	freq = args[1]
+	freq = float(args[1])
 
 	length = 75
 	learning_x = []
@@ -69,7 +69,6 @@ def main():
 	non_learning_x = []
 	non_learning_y = []
 	total = len(queries)
-	freq = 0.00003
 	limit = freq * total
 	real_results = set()
 	for q in queries:
