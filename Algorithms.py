@@ -12,6 +12,18 @@ def g_func(seed):
 	s = random.randint(0, 1000)
 	return lambda x: -1 if murmurhash3_32(x, s, positive=True) % 2 == 0 else 1
 
+class SingleHash:
+	def __init__(self, R):
+		self.hash_func = hash_func(0, R);
+		self.hash_arrays = np.zeros((R,), dtype=int)
+
+	def insert(self, x):
+		self.hash_arrays[self.hash_func(x)] += 1
+
+	def query(self, x):
+		return self.hash_arrays[self.hash_func(x)]
+
+
 class CountMinSketch:
 	def __init__(self, R):
 		self.hash_functions = [hash_func(i, R) for i in range(4)]
